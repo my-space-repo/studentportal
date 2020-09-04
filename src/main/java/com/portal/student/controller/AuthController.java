@@ -31,7 +31,7 @@ import com.portal.student.repository.UserRepository;
 import com.portal.student.security.jwt.JwtUtils;
 import com.portal.student.security.services.UserDetailsImpl;
 
-@CrossOrigin(origins = "*", maxAge = 3600)
+@CrossOrigin
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
