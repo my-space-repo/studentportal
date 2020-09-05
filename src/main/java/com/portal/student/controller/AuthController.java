@@ -49,7 +49,7 @@ public class AuthController {
 
     @Autowired
     JwtUtils jwtUtils;
-
+    @CrossOrigin("*")
     @PostMapping("/signin")
     public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
 
@@ -70,6 +70,7 @@ public class AuthController {
                 userDetails.getEmail(),
                 roles));
     }
+    @CrossOrigin("*")
     @PostMapping("/signup")
     public ResponseEntity<?> registerUser(@Valid @RequestBody SignupRequest signUpRequest) {
         if (userRepository.existsByUsername(signUpRequest.getUsername())) {
