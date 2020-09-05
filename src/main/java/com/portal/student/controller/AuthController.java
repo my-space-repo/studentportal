@@ -31,7 +31,7 @@ import com.portal.student.repository.UserRepository;
 import com.portal.student.security.jwt.JwtUtils;
 import com.portal.student.security.services.UserDetailsImpl;
 
-@CrossOrigin("*")
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
@@ -49,7 +49,7 @@ public class AuthController {
 
     @Autowired
     JwtUtils jwtUtils;
-    @CrossOrigin("*")
+    @CrossOrigin(origins = "*")
     @PostMapping("/signin")
     public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
 
@@ -70,7 +70,7 @@ public class AuthController {
                 userDetails.getEmail(),
                 roles));
     }
-    @CrossOrigin("*")
+    @CrossOrigin(origins = "*")
     @PostMapping("/signup")
     public ResponseEntity<?> registerUser(@Valid @RequestBody SignupRequest signUpRequest) {
         if (userRepository.existsByUsername(signUpRequest.getUsername())) {
